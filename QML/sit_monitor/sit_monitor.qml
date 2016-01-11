@@ -23,8 +23,9 @@ ApplicationWindow {
     }
 
     Label {
-        text: qsTr("Sit Monior")
-        anchors.centerIn: parent
+        text: qsTr("Last Sit delay : 33 min")
+        anchors.bottom: parent.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
     }
 
     Item {
