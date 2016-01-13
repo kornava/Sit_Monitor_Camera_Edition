@@ -57,9 +57,6 @@ ApplicationWindow {
             focus : visible // to receive focus and capture key events when visible
         }
 
-        Image {
-            id: photoPreview
-        }
     }
 }
 
