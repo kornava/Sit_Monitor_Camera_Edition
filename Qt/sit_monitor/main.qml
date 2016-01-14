@@ -1,6 +1,7 @@
-import QtQuick 2.5
-import QtQuick.Controls 1.3
+import QtQuick 2.3
+import QtQuick.Controls 1.2
 import QtMultimedia 5.5
+import my.cool.stuff 1.0
 
 ApplicationWindow {
     visible: true
@@ -13,7 +14,7 @@ ApplicationWindow {
             title: qsTr("File")
             MenuItem {
                 text: qsTr("&Open")
-                //onTriggered: console.log("Open action triggered");
+                onTriggered: console.log("Open action triggered");
             }
             MenuItem {
                 text: qsTr("Exit")
@@ -23,11 +24,9 @@ ApplicationWindow {
     }
 
     Label {
-        text: qsTr("Last Sit delay : 33 min")
-        anchors.bottom: parent.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
+        text: qsTr("Hello World")
+        anchors.centerIn: parent
     }
-
     Item {
         width: 640
         height: 360
@@ -57,12 +56,16 @@ ApplicationWindow {
             focus : visible // to receive focus and capture key events when visible
         }
 
-//        FaceRecognizer {
-//            id: faceRecognitionFilter
+        FaceRecognizer {
+            id: faceRecognitionFilter
+            property real scaleFactor: 1.1 // Define properties either in QML or in C++. Can be animated too.
+                   onFinished: {
+                       console.log("Found " + result.rects.length + " faces");
+                       //s... // do something with the rectangle list
 
-
-//        }
+        }
 
     }
 }
 
+}
